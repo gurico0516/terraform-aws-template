@@ -20,17 +20,20 @@ variable "private_subnet_cidr" {
 
 variable "nat_allocation_id" {
   description = "NAT Gateway用EIPのAllocation ID"
-  default     = "eipalloc-0c850daf4df341ded"
+  type        = string
+  # 環境変数 TF_VAR_nat_allocation_id で上書きすることを想定
 }
 
 variable "nat_private_ip" {
   description = "NAT GatewayのプライベートIP"
-  default     = "10.0.1.33"
+  type        = string
+  # 環境変数 TF_VAR_nat_private_ip で上書きすることを想定
 }
 
 variable "igw_id" {
   description = "パブリックルートテーブル用のInternet Gateway ID"
-  default     = "igw-0aa012fa015757436"
+  type        = string
+  # 環境変数 TF_VAR_igw_id で上書きすることを想定
 }
 
 variable "ami" {
@@ -45,20 +48,24 @@ variable "instance_type" {
 
 variable "public_key_name" {
   description = "Webサーバー用のキーペア名"
-  default     = "RSA"
+  type        = string
+  # 環境変数 TF_VAR_public_key_name で上書きすることを想定
 }
 
 variable "private_key_name" {
   description = "DBサーバー用のキーペア名"
-  default     = "PrivateRSA"
+  type        = string
+  # 環境変数 TF_VAR_private_key_name で上書きすることを想定
 }
 
 variable "web_instance_private_ip" {
   description = "WebサーバーのプライベートIP"
-  default     = "10.0.1.10"
+  type        = string
+  # 環境変数 TF_VAR_web_instance_private_ip で上書きすることを想定
 }
 
 variable "db_instance_private_ip" {
   description = "DBサーバーのプライベートIP"
-  default     = "10.0.2.10"
+  type        = string
+  # 環境変数 TF_VAR_db_instance_private_ip で上書きすることを想定
 }
